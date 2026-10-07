@@ -1,4 +1,5 @@
 import { LazyMotion, MotionConfig, domAnimation } from 'framer-motion'
+import ScrollProgress from './components/ScrollProgress.jsx'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
@@ -13,6 +14,7 @@ export default function App() {
         <a className="skip-link" href="#main">
           Skip to content
         </a>
+        <ScrollProgress />
         <Header />
         <main id="main" tabIndex={-1}>
           <Hero />
