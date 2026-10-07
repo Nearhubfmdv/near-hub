@@ -10,9 +10,15 @@ export const NAV = [
   { id: 'engage', label: 'Engage' },
 ]
 
-// Client-supplied statement for the "What we offer" block (verbatim).
-export const OFFER =
-  'We help enterprises turn their proprietary data into AI models they fully own, creating real business value while staying within their compliance, security, and governance requirements.'
+// Client-supplied statement for the "What we offer" block (verbatim), split so
+// "fully own" can carry the one brand-blue emphasis.
+export const OFFER = {
+  before: 'We help enterprises turn their proprietary data into AI models they ',
+  emphasis: 'fully own',
+  after:
+    // Non-breaking space keeps "requirements." from wrapping onto a line by itself.
+    ', creating real business value while staying within their compliance, security, and governance\u00a0requirements.',
+}
 
 export const FOUNDER = {
   slug: 'francisco-martinez-de-velasco',

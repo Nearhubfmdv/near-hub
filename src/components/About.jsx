@@ -49,7 +49,11 @@ export default function About() {
           <h2 id="offer-title" className="section-title">
             What we offer
           </h2>
-          <p className="offer__text">{OFFER}</p>
+          <p className="offer__text">
+            {OFFER.before}
+            <em>{OFFER.emphasis}</em>
+            {OFFER.after}
+          </p>
         </Reveal>
       </div>
     </section>
