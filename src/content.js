@@ -10,12 +10,9 @@ export const NAV = [
   { id: 'engage', label: 'Engage' },
 ]
 
-export const CAPABILITIES = [
-  { n: '01', title: 'Compute' },
-  { n: '02', title: 'Secure data pipelines' },
-  { n: '03', title: 'Human-in-the-loop QC' },
-  { n: '04', title: 'Model training operations' },
-]
+// Client-supplied statement for the "What we offer" block (verbatim).
+export const OFFER =
+  'We help enterprises turn their proprietary data into AI models they fully own, creating real business value while staying within their compliance, security, and governance requirements.'
 
 export const FOUNDER = {
   slug: 'francisco-martinez-de-velasco',

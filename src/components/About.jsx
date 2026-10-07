@@ -1,4 +1,4 @@
-import { CAPABILITIES } from '../content.js'
+import { OFFER } from '../content.js'
 import Reveal from './Reveal.jsx'
 
 export default function About() {
@@ -32,8 +32,9 @@ export default function About() {
                 in-house data-science teams.
               </p>
               <p>
-                We provide the “back-office” infrastructure behind AI systems—not chatbots or
-                end-user apps.
+                We provide the “back-office” infrastructure behind AI systems: compute, secure data
+                pipelines, human-in-the-loop quality controls, and model-training operations (not
+                chatbots or end-user apps).
               </p>
               <p>
                 By operating from Mexico with U.S.-grade compliance, we help teams run governed AI
@@ -44,18 +45,11 @@ export default function About() {
           </div>
         </div>
 
-        <Reveal as="div" className="capabilities">
-          <h3 className="capabilities__title">What we provide</h3>
-          <ol className="capabilities__list">
-            {CAPABILITIES.map((c) => (
-              <li key={c.n} className="capability">
-                <span className="capability__n" aria-hidden="true">
-                  {c.n}
-                </span>
-                <span className="capability__name">{c.title}</span>
-              </li>
-            ))}
-          </ol>
+        <Reveal as="section" className="offer" aria-labelledby="offer-title">
+          <h2 id="offer-title" className="section-title">
+            What we offer
+          </h2>
+          <p className="offer__text">{OFFER}</p>
         </Reveal>
       </div>
     </section>

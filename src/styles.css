@@ -566,116 +566,29 @@ main:focus {
   }
 }
 
-/* Capabilities: a ruled four-column band, not cards. */
-.capabilities {
+/* What we offer: heading under the image column, statement under the About text. */
+.offer {
+  display: grid;
+  gap: 0 clamp(2.5rem, 6vw, 5rem);
   margin-top: clamp(4.5rem, 9vw, 8rem);
 }
 
-.capabilities__title {
-  padding-bottom: 1.25rem;
-  font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);
-  font-weight: 600;
+.offer__text {
+  max-width: 36rem;
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem);
+  font-weight: 500;
+  line-height: 1.5;
   letter-spacing: -0.01em;
 }
 
-.capabilities__list {
-  display: grid;
-  border-top: 1px solid var(--border-strong);
-}
-
-.capability {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  padding: 1.75rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.capability::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--near-blue);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.6s var(--ease);
-}
-
-.capability:hover::before {
-  transform: scaleX(1);
-}
-
-.capability__n {
-  color: var(--accent-text);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-}
-
-.capability__name {
-  max-width: 14ch;
-  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-@media (max-width: 599px) {
-  .capability {
-    flex-direction: row;
+@media (min-width: 960px) {
+  .offer {
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
     align-items: baseline;
-    gap: 1.25rem;
-    padding: 1.4rem 0;
   }
 
-  .capability__n {
-    min-width: 2ch;
-  }
-
-  .capability__name {
-    max-width: none;
-  }
-}
-
-@media (min-width: 600px) {
-  .capabilities__list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .capability {
-    padding: 2rem 2rem 2.5rem 0;
-  }
-
-  .capability:nth-child(even) {
-    padding-left: 2rem;
-    border-left: 1px solid var(--border);
-  }
-}
-
-@media (min-width: 1024px) {
-  .capabilities__list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    border-bottom: 1px solid var(--border);
-  }
-
-  .capability {
-    min-height: 220px;
-    justify-content: space-between;
-    padding: 2rem 2rem 2.25rem;
-    border-bottom: 0;
-  }
-
-  .capability:first-child {
-    padding-left: 0;
-  }
-
-  .capability + .capability {
-    padding-left: 2rem;
-    border-left: 1px solid var(--border);
+  .offer .section-title {
+    margin-bottom: 0;
   }
 }
 
