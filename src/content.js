@@ -6,7 +6,7 @@ export const MAILTO = `mailto:${EMAIL}`
 
 export const NAV = [
   { id: 'about', label: 'About' },
-  { id: 'leadership', label: 'Leadership' },
+  { id: 'team', label: 'Meet the Team' },
   { id: 'engage', label: 'Engage' },
 ]
 

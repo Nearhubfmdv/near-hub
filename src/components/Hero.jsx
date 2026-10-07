@@ -41,9 +41,6 @@ export default function Hero() {
       <motion.div className="hero__shade" style={{ opacity: shade }} aria-hidden="true" />
 
       <motion.div className="container hero__content" style={{ opacity: contentOpacity }}>
-        <motion.p className="eyebrow" {...rise(0.25)}>
-          Nearshore deep-learning infrastructure
-        </motion.p>
         <h1 id="hero-title" className="hero__title">
           <motion.span className="hero__line" {...rise(0.35)}>
             We do the deep learning&nbsp;—
@@ -52,30 +49,11 @@ export default function Hero() {
             so you don’t have to.
           </motion.span>
         </h1>
-        <motion.p className="hero__lede" {...rise(0.7)}>
-          NEAR is building the first nearshoring hub for deep learning in North America: the
-          infrastructure to train, evaluate, and deploy high-quality AI, operated from Mexico with
-          U.S.-grade compliance.
-        </motion.p>
-        <motion.div {...rise(0.85)}>
+        <motion.div className="hero__cta" {...rise(0.75)}>
           <a className="button" href="#engage">
             Engage NEAR <span className="button__arrow" aria-hidden="true">→</span>
           </a>
         </motion.div>
-      </motion.div>
-
-      <motion.div
-        className="container"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.1 }}
-      >
-        <div className="hero__meta">
-          <p>Operating from Mexico · U.S.-grade compliance</p>
-          <a href="#about" className="hero__scroll">
-            Scroll <span aria-hidden="true">↓</span>
-          </a>
-        </div>
       </motion.div>
     </section>
   )

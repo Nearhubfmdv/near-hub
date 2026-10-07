@@ -122,8 +122,10 @@ textarea {
   border-radius: 2px;
 }
 
-[id] {
-  scroll-margin-top: var(--header-h);
+/* Nav targets are each section's inner container, so the section's top padding is
+   skipped and the heading lands just below the sticky header. */
+.anchor {
+  scroll-margin-top: calc(var(--header-h) + clamp(24px, 4vw, 48px));
 }
 
 main:focus {
@@ -170,43 +172,12 @@ main:focus {
 /* ==========================================================================
    Type
    ========================================================================== */
-.eyebrow,
-.section-label,
-.person__role,
-.board__title,
-.capabilities__title,
-.engage__contact dt {
-  font-size: 0.75rem;
+.section-title {
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-size: clamp(2.25rem, 1.5rem + 2.6vw, 3.75rem);
   font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.section-label {
-  display: flex;
-  gap: 0.6em;
-  margin-bottom: 1.75rem;
-  color: var(--text-secondary);
-}
-
-.section-label__index {
-  color: var(--accent-text);
-  font-variant-numeric: tabular-nums;
-}
-
-.heading-lg {
-  font-size: clamp(2rem, 1.35rem + 2.2vw, 3.25rem);
-  font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-  text-wrap: balance;
-}
-
-.heading-xl {
-  font-size: clamp(2.75rem, 1.6rem + 4.4vw, 5.5rem);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.04em;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
 }
 
 .section {
@@ -491,17 +462,12 @@ main:focus {
 }
 
 .hero__content {
-  padding-bottom: clamp(56px, 9vh, 112px);
+  padding-bottom: clamp(88px, 16vh, 184px);
 }
 
 /* Never leave a focused control invisible while the hero fades on scroll. */
 .hero__content:focus-within {
   opacity: 1 !important;
-}
-
-.hero .eyebrow {
-  margin-bottom: 1.5rem;
-  color: var(--text-secondary);
 }
 
 .hero__title {
@@ -520,49 +486,8 @@ main:focus {
   color: var(--text-secondary);
 }
 
-.hero__lede {
-  max-width: 34rem;
-  margin: clamp(1.5rem, 3vw, 2rem) 0 clamp(2rem, 4vw, 2.75rem);
-  color: var(--text-secondary);
-  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.1875rem);
-  line-height: 1.65;
-}
-
-.hero__meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  min-height: 64px;
-  border-top: 1px solid var(--border);
-  color: var(--text-muted);
-  font-size: 0.8125rem;
-  letter-spacing: 0.04em;
-}
-
-
-.hero__scroll {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-height: 44px;
-  text-decoration: none;
-  transition: color 0.25s var(--ease);
-}
-
-.hero__scroll:hover {
-  color: var(--text-primary);
-}
-
-@media (max-width: 479px) {
-  .hero .eyebrow {
-    letter-spacing: 0.12em;
-  }
-
-  .hero__scroll {
-    display: none;
-  }
+.hero__cta {
+  margin-top: clamp(2rem, 4.5vw, 3.25rem);
 }
 
 /* ==========================================================================
@@ -604,11 +529,6 @@ main:focus {
   pointer-events: none;
 }
 
-.about__text .heading-lg {
-  max-width: 16ch;
-  margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
-}
-
 .prose {
   max-width: 36rem;
   color: var(--text-secondary);
@@ -639,7 +559,9 @@ main:focus {
 
 .capabilities__title {
   padding-bottom: 1.25rem;
-  color: var(--text-muted);
+  font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .capabilities__list {
@@ -677,7 +599,6 @@ main:focus {
   color: var(--accent-text);
   font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -751,8 +672,9 @@ main:focus {
   border-top: 1px solid var(--border);
 }
 
-.section-head {
-  margin-bottom: clamp(3rem, 6vw, 5rem);
+/* The team heading introduces a larger block than About/Engage. */
+.leadership .section-title {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
 .portrait {
@@ -791,6 +713,8 @@ main:focus {
 
 .person__role {
   color: var(--accent-text);
+  font-size: 0.9375rem;
+  font-weight: 500;
 }
 
 /* Founder: a featured editorial row. */
@@ -824,11 +748,7 @@ main:focus {
   .founder {
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     gap: clamp(2.5rem, 6vw, 6rem);
-    align-items: end;
-  }
-
-  .founder__text {
-    padding-bottom: 0.5rem;
+    align-items: center;
   }
 }
 
@@ -838,14 +758,7 @@ main:focus {
   }
 }
 
-/* Board */
-.board__title {
-  padding-bottom: 1.25rem;
-  margin-bottom: clamp(2rem, 4vw, 3rem);
-  border-bottom: 1px solid var(--border-strong);
-  color: var(--text-muted);
-}
-
+/* Remaining team members */
 .board__grid {
   display: grid;
   gap: 3rem;
@@ -940,32 +853,11 @@ main:focus {
 
 .engage__copy {
   max-width: 30rem;
-  margin-top: clamp(1.5rem, 3vw, 2rem);
   color: var(--text-secondary);
   font-size: clamp(1rem, 0.97rem + 0.2vw, 1.125rem);
   line-height: 1.7;
 }
 
-.engage__contact {
-  display: grid;
-  gap: 1.5rem;
-  max-width: 30rem;
-  margin-top: clamp(2.5rem, 5vw, 3.5rem);
-  padding-top: 1.75rem;
-  border-top: 1px solid var(--border);
-}
-
-.engage__contact dt {
-  margin-bottom: 0.35rem;
-  color: var(--text-muted);
-}
-
-.engage__contact dd {
-  font-size: 1.125rem;
-  font-weight: 500;
-}
-
-.engage__contact a,
 .form-status a,
 .site-footer__email {
   display: inline-flex;
@@ -979,11 +871,6 @@ main:focus {
   transition: text-decoration-color 0.25s var(--ease), color 0.25s var(--ease);
 }
 
-.engage__contact dd a {
-  margin-block: -10px; /* keep the 44px target without adding visual space */
-}
-
-.engage__contact a:hover,
 .form-status a:hover,
 .site-footer__email:hover {
   color: #fff;

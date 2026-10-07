@@ -1,7 +1,7 @@
 # NEAR — nearhub.net
 
 Public website for NEAR / NearHub: what NEAR does, who leads it, and a way to get in touch.
-A single page — Hero, About (01), Leadership (02), Engage NEAR (03), footer.
+A single page — Hero, About, Meet the Team, Engage NEAR, footer.
 
 ## Stack
 

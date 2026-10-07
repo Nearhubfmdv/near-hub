@@ -1,11 +1,10 @@
 import { CAPABILITIES } from '../content.js'
 import Reveal from './Reveal.jsx'
-import SectionLabel from './SectionLabel.jsx'
 
 export default function About() {
   return (
-    <section id="about" className="section about" aria-labelledby="about-title">
-      <div className="container">
+    <section className="section about" aria-labelledby="about-title">
+      <div id="about" className="container anchor">
         <div className="about__grid">
           <Reveal className="about__media">
             <img
@@ -22,9 +21,8 @@ export default function About() {
 
           <div className="about__text">
             <Reveal>
-              <SectionLabel index="01">About</SectionLabel>
-              <h2 id="about-title" className="heading-lg">
-                The back-office infrastructure behind AI systems.
+              <h2 id="about-title" className="section-title">
+                About
               </h2>
             </Reveal>
             <Reveal className="prose" delay={0.1}>
@@ -34,9 +32,8 @@ export default function About() {
                 in-house data-science teams.
               </p>
               <p>
-                We provide the “back-office” infrastructure behind AI systems: compute, secure data
-                pipelines, human-in-the-loop quality controls, and model-training operations. Not
-                chatbots or end-user apps.
+                We provide the “back-office” infrastructure behind AI systems—not chatbots or
+                end-user apps.
               </p>
               <p>
                 By operating from Mexico with U.S.-grade compliance, we help teams run governed AI
