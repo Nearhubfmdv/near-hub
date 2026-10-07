@@ -26,7 +26,7 @@ export default function About() {
               </h2>
             </Reveal>
             <Reveal className="prose" delay={0.1}>
-              <p className="prose__lead">
+              <p>
                 NEAR is building the first nearshoring hub for deep learning in North America—so
                 companies can train, evaluate, and deploy high-quality AI without building massive
                 in-house data-science teams.

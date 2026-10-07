@@ -22,6 +22,11 @@
   --border-strong: rgba(255, 255, 255, 0.18);
   --border-field: rgba(255, 255, 255, 0.38); /* >= 3:1 against the dark backgrounds */
 
+  /* Body text: one standard size, plus a compact size for the four-column team bios. */
+  --text-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --text-body-sm: 0.9375rem;
+  --leading-body: 1.7;
+
   --font: 'Manrope', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   --max: 1360px;
@@ -546,18 +551,12 @@ main:focus {
 .prose {
   max-width: 36rem;
   color: var(--text-secondary);
-  font-size: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
-  line-height: 1.75;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
 }
 
 .prose p + p {
   margin-top: 1.25em;
-}
-
-.prose__lead {
-  color: var(--text-primary);
-  font-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
-  line-height: 1.6;
 }
 
 @media (min-width: 960px) {
@@ -577,7 +576,7 @@ main:focus {
 }
 
 .offer__text {
-  max-width: 23em; /* about four balanced lines on desktop */
+  max-width: 33em; /* about three balanced lines on large desktop */
   font-size: clamp(1.375rem, 0.9rem + 2.1vw, 2.5rem);
   font-weight: 500;
   line-height: 1.35;
@@ -671,8 +670,8 @@ main:focus {
   max-width: 34rem;
   margin-top: 1.5rem;
   color: var(--text-secondary);
-  font-size: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
-  line-height: 1.7;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
 }
 
 @media (min-width: 720px) {
@@ -730,8 +729,8 @@ main:focus {
   grid-area: bio;
   max-width: 34rem;
   color: var(--text-secondary);
-  font-size: 0.9375rem;
-  line-height: 1.7;
+  font-size: var(--text-body-sm);
+  line-height: var(--leading-body);
 }
 
 @media (min-width: 600px) {
@@ -785,8 +784,8 @@ main:focus {
 .engage__copy {
   max-width: 30rem;
   color: var(--text-secondary);
-  font-size: clamp(1rem, 0.97rem + 0.2vw, 1.125rem);
-  line-height: 1.7;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
 }
 
 .form-status a,
