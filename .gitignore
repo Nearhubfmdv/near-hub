@@ -1,0 +1,9 @@
+node_modules
+dist
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+# Reference screenshots of the previous Squarespace site (not used by the build)
+images/old website mockups/
